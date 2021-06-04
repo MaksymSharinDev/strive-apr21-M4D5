@@ -5,9 +5,10 @@ show provided data as movie components
 import '../styles/SearchBar.css'
 import {Component} from "react";
 import {Col, Row} from "react-bootstrap";
-//import SingleMovie from './SigleMovie'
+import SingleMovie from './SigleMovie'
 
 //Mock For Testing
+/*
 const SingleMovie = function(props)
 {
     return (
@@ -31,7 +32,7 @@ const SingleMovie = function(props)
         </div>
     )
 }
-
+*/
 class SearchResults extends Component {
 
     render() {
@@ -39,7 +40,7 @@ class SearchResults extends Component {
             <section id={'#searchResults'}>
                 <Row className={'no-gutters'}>
                     {this.props.movies.map(obj =>
-                        <Col className={'col-3 p-3'}>
+                        <Col className={'d-flex justify-center col-3 p-3'}>
                         <SingleMovie movie={obj}/>
                         </Col>
                     )}

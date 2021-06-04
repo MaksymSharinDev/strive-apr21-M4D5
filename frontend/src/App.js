@@ -11,9 +11,11 @@ function App() {
   return (
       <>
         <NavBar/>
+          {/*
+          <GalleryMovies />
         <GalleryMovies />
         <GalleryMovies />
-        <GalleryMovies />
+        */}
       </>
   );
 }

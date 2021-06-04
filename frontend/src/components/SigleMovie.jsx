@@ -2,21 +2,34 @@
 /*
 Display our mega fancy component basing upon data passed as prop
  */
-// import './App.css'
+import '../styles/SingleMovie.css'
 import { Component } from 'react'
 
 class SingleMovie extends Component {
     state = {  }
-    render() { 
+    render() {
+
+        /*
+        <p>{props.movie.Title}</p>
+            <p>{props.movie.Year}</p>
+            <p>{props.movie.imdbID}</p>
+            <p>{props.movie.Type}</p>
+            <p>{props.movie.Poster}</p>
+        */
         return (  
-            <div className='tile'>
+            <div className='tile' id={this.props.movie.imdbID}>
                 <div className='tile__media'>
-                    {/* <img className='tile__img' src={this.props.movieInfo.Poster} alt="movie cover" /> */}
-                    <img className='tile__img' src="assets/media/media32.jpg" alt="movie cover" />
+                   <img className='tile__img' src={this.props.movie.Poster} alt="movie cover" />
                 </div>
                 <div className='tile__details'>
-                    <div className='tile__title'>
-                        Watch Now
+                    <div className='tile__p'>
+                        {"Title: " + this.props.movie.Title}
+                    </div>
+                    <div className='tile__p'>
+                        {"Year: " + this.props.movie.Year}
+                    </div>
+                    <div className='tile__p'>
+                        {"Type: " + this.props.movie.Type}
                     </div>
                 </div>
             </div>
