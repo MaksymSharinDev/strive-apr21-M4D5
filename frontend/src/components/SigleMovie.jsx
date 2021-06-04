@@ -11,7 +11,8 @@ class SingleMovie extends Component {
         return (  
             <div className='tile'>
                 <div className='tile__media'>
-                    <img className='tile__img' src="assets/media/media30.jpg" alt="movie cover" />
+                    {/* <img className='tile__img' src={this.props.movieInfo.Poster} alt="movie cover" /> */}
+                    <img className='tile__img' src="assets/media/media32.jpg" alt="movie cover" />
                 </div>
                 <div className='tile__details'>
                     <div className='tile__title'>
