@@ -94,6 +94,7 @@
     object-fit: cover;
 }
 .ms-slider .tile__details {
+    color: whitesmoke;
     position: absolute;
     bottom: 0;
     left: 0;

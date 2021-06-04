@@ -6,7 +6,7 @@ by SearchBar and Search results
  */
 //Iteration 1:
 import {Component} from "react";
-import {Container, Navbar, Nav, NavDropdown, Row, Col} from 'react-bootstrap'
+import { Navbar, Nav, NavDropdown, Row, Col} from 'react-bootstrap'
 import SearchBar from "./SearchBar";
 import SearchResults from "./SearchResults";
 
