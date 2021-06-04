@@ -14,6 +14,7 @@ class NavBar extends Component {
     state = {
         fetchedMovies: []
     }
+
     onSearchFetch = (fetchedMovies) => {
         this.setState({fetchedMovies : fetchedMovies})
     }

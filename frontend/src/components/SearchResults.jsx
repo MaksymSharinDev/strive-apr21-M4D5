@@ -2,12 +2,10 @@
 /*
 show provided data as movie components
  */
-
 import '../styles/SearchBar.css'
 import {Component} from "react";
 import {Col, Row} from "react-bootstrap";
 //import SingleMovie from './SigleMovie'
-//import  from 'react-bootstrap'
 
 //Mock For Testing
 const SingleMovie = function(props)
@@ -33,7 +31,6 @@ const SingleMovie = function(props)
         </div>
     )
 }
-
 
 class SearchResults extends Component {
 

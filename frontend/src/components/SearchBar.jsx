@@ -13,8 +13,6 @@ import {Component} from "react";
 
 class SearchBar extends Component {
 
-
-
     movieSearch = async (search) => {
         let fetchedMovies = []
         let inputMovieObj = {
@@ -46,9 +44,7 @@ class SearchBar extends Component {
         
         
     }
-
     returnResultArray = async (e)=>{
-        console.log(e.target.value )
         this.props.callback( await this.movieSearch( e.target.value ) )
     }
     render() {
