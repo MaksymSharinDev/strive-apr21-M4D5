@@ -61,7 +61,8 @@
  .tile:hover .tile__details {
     opacity: 1;
 }
- .tile__p {
+ .ms-slider .tile__p {
+     display: none;
     position: relative;
     top: 0;
     padding: 10px;

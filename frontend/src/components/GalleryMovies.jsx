@@ -17,7 +17,7 @@ class GalleryMovies extends Component {
                 <h4 className='ml-4 text-light'> Gallery Title</h4>
                 <div className='mx-1 ms-slider ms-slider--enlarge '>
                     <div className='ms-slider__inner'>
-                        {this.state.movieArray.map(movie => <SingleMovie movieInfo={movie}/>)}
+                        {this.state.movieArray.map(movie => <SingleMovie movie={movie}/>)}
                         {/* <SingleMovie /> */}
                     </div>
                 </div>

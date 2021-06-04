@@ -53,6 +53,7 @@
     overflow-y:hidden;
     scrollbar-color: rgb(92, 90, 90) #212124;
 }
+
 .ms-slider__inner {
     transition: 450ms -webkit-transform;
     transition: 450ms transform;
@@ -144,5 +145,7 @@
     -webkit-transform: translate3d(125px, 0, 0);
     transform: translate3d(125px, 0, 0);
 }
-
+.ms-slider, .ms-slider__inner{
+    height: 400px;
+}
 /* Gallery CSS from OLD version ENDS ====================== */
