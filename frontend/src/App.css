@@ -287,18 +287,18 @@ td {
 }
 
 .sub-links a {
-  color: var(--dark);
+  color: white;
   text-decoration: none;
 }
 
 .logos a {
   padding: 10px;
-  color: var(--dark);
+  color: white;
 }
 
 footer {
   padding: 20px;
   text-align: center;
-  color: var(--dark);
+  color: white;
   margin: 10px;
 }

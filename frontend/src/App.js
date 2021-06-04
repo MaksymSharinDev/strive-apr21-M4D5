@@ -6,6 +6,7 @@ import  NavBar from "./components/Navbar"
 import GalleryMovies from './components/GalleryMovies';
 import CommentWidget from "./components/CommentWidget";
 import FooterNetflix from "./components/FooterNetflix";
+import {Container} from "react-bootstrap";
 
 function App() {
   return (
@@ -14,11 +15,15 @@ function App() {
         <GalleryMovies/>
         <GalleryMovies/>
         <GalleryMovies/>
-        <CommentWidget author="Emilian" />
-        <CommentWidget author="Maksym" />
-        <CommentWidget author="Nando" />
-        <CommentWidget author="Mike" />
-        <FooterNetflix />
+          <Container style={{backgroundColor: 'White'}}>
+              <CommentWidget author="Emilian" />
+              <CommentWidget author="Maksym" />
+              <CommentWidget author="Nando" />
+              <CommentWidget author="Mike" />
+          </Container>
+
+            <FooterNetflix />
+
       </div>
   );
 }
