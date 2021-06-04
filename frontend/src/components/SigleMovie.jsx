@@ -6,15 +6,7 @@ Display our mega fancy component basing upon data passed as prop
 import { Component } from 'react'
 
 class SingleMovie extends Component {
-    state = {  
-        movie: {
-            Title: '',
-            Year: '',
-            imdbID: '',
-            Type: '',
-            Poster: ''
-        }
-    }
+    state = {}
     
     render() { 
         return (  

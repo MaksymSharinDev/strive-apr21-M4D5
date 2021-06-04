@@ -6,9 +6,10 @@ by SearchBar and Search results
  */
 //Iteration 1:
 import {Component} from "react";
-import { Navbar, Nav, NavDropdown, Row, Col} from 'react-bootstrap'
+import { Navbar, Nav, Row, Col} from 'react-bootstrap'
 import SearchBar from "./SearchBar";
-import SearchResults from "./SearchResults";
+// import SearchResults from "./SearchResults";
+import GalleryMovies from "./GalleryMovies"
 
 class NavBar extends Component {
     state = {
@@ -18,7 +19,6 @@ class NavBar extends Component {
     onSearchFetch = (fetchedMovies) => {
         this.setState({fetchedMovies : fetchedMovies})
     }
-
 
     render() {
         return (
@@ -37,15 +37,11 @@ class NavBar extends Component {
                         <Navbar.Toggle aria-controls="responsive-navbar-nav"/>
                         <Navbar.Collapse id="responsive-navbar-nav">
                             <Nav className="me-auto">
-                                <Nav.Link href="#features">Features</Nav.Link>
-                                <Nav.Link href="#pricing">Pricing</Nav.Link>
-                                <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
-                                    <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-                                    <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
-                                    <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-                                    <NavDropdown.Divider/>
-                                    <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
-                                </NavDropdown>
+                                <Nav.Link href="#home">Home</Nav.Link>
+                                <Nav.Link href="#tv-shows">TV Shows</Nav.Link>
+                                <Nav.Link href="#movies">Movies</Nav.Link>
+                                <Nav.Link href="#recently-added">Recently Added</Nav.Link>
+                                <Nav.Link href="#my-list">My List</Nav.Link>
                             </Nav>
                             <Nav className={"ml-auto"}>
                                 <SearchBar callback={this.onSearchFetch}/>
@@ -53,14 +49,14 @@ class NavBar extends Component {
                         </Navbar.Collapse>
                     </Navbar>
                 </Col>
-                <Col className={"col-12"}>
-                    <SearchResults movies={this.state.fetchedMovies}
+                {/* <Col className={"col-12"}> */}
+                    <GalleryMovies galleryInfo={this.state.fetchedMovies}/>
+                    {/* <SearchResults movies={this.state.fetchedMovies}
                                    className={!!this.state.fetchedMovies ? null : 'collapsed'}/>
-                </Col>
+                                   {console.log(this.state.fetchedMovies)} */}
+                {/* </Col> */}
                 <br/>
             </Row>
-
-
         )
     }
 }

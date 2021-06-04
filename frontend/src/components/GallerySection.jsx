@@ -1,44 +1,36 @@
-//SRP
-/*
-Here just a transposition of foot in react-bootstrap components
- */
+import { Component } from 'react'
+import GalleryMovies from "./GalleryMovies"
 
-
-//API fetch
-// TOP DOWN
-// FIst get ready the api
-//--> data
-//we can test gallerySection component Data retrieving
-//in the last we can model our movie component taking inspiration from the legacy project
-const getMovies = async () => {
-    let fetchedMovies = []
-    let inputMovieObj = {
-        Title: '',
-        Year: '',
-        imdbID: '',
-        Type: '',
-        Poster: ''
+class GallerySection extends Component {
+    state = {  
+        movieArray: [],
+        // isLoading: true
+    }
+    render() { 
+        return (  
+            <>
+                {this.state.movieArray.map((gallery, i) => <GalleryMovies key={i} galleryInfo={gallery} galleryTitle={this.props.galleryArr[i]}/> )}
+            </>
+        );
     }
 
-    await fetch(`http://www.omdbapi.com/?i=tt3896198&apikey=721c816a&s=Sylvester+Stallone`).then(res => res.json())
-        .then(data => data.Search.map( obj => fetchedMovies.push(
-            {
-                Title: obj.Title,
-                Year: obj.Year,
-                imdbID: obj.imdbID,
-                Type: obj.Type,
-                Poster: obj.Poster
-            }))
-        )
+    fetchContent = async (gallery) => {
+        const apiUrl = 'http://www.omdbapi.com/?i=tt3896198&apikey=721c816a&s='
+        const query = gallery
 
-    await fetch(`http://www.omdbapi.com/?i=tt3896198&apikey=721c816a&s=Al+Pacino`).then(res => res.json())
-        .then(data => data.Search.map(obj => fetchedMovies.push(
-            {
-                Title: obj.Title,
-                Year: obj.Year,
-                imdbID: obj.imdbID,
-                Type: obj.Type,
-                Poster: obj.Poster
-            })))
-    return fetchedMovies
+        const response = await fetch( apiUrl + query)
+        const data = await response.json()
+        this.setState({
+            movieArray: [...this.state.movieArray, data.Search]
+        })
+        return data.Search
+    }
+    
+    componentDidMount = async () => {
+        this.props.galleryArr.map(gallery => {
+           this.fetchContent(gallery)
+        })
+    }
 }
+ 
+export default GallerySection;
