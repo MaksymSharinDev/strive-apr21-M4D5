@@ -9,27 +9,20 @@ class SingleMovie extends Component {
     state = {  }
     render() {
 
-        /*
-        <p>{props.movie.Title}</p>
-            <p>{props.movie.Year}</p>
-            <p>{props.movie.imdbID}</p>
-            <p>{props.movie.Type}</p>
-            <p>{props.movie.Poster}</p>
-        */
         return (  
-            <div className='tile' id={this.props.movie.imdbID}>
+            <div className='tile' id={this.props.movieInfo.imdbID}>
                 <div className='tile__media'>
-                   <img className='tile__img' src={this.props.movie.Poster} alt="movie cover" />
+                   <img className='tile__img' src={this.props.movieInfo.Poster} alt="movie cover" />
                 </div>
                 <div className='tile__details'>
                     <div className='tile__p'>
-                        {"Title: " + this.props.movie.Title}
+                        {"Title: " + this.props.movieInfo.Title}
                     </div>
                     <div className='tile__p'>
-                        {"Year: " + this.props.movie.Year}
+                        {"Year: " + this.props.movieInfo.Year}
                     </div>
                     <div className='tile__p'>
-                        {"Type: " + this.props.movie.Type}
+                        {"Type: " + this.props.movieInfo.Type}
                     </div>
                 </div>
             </div>

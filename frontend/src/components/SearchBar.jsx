@@ -15,13 +15,13 @@ class SearchBar extends Component {
 
     movieSearch = async (search) => {
         let fetchedMovies = []
-        let inputMovieObj = {
-            Title: '',
-            Year: '',
-            imdbID: '',
-            Type: '',
-            Poster: ''
-        }
+        // let inputMovieObj = {
+        //     Title: '',
+        //     Year: '',
+        //     imdbID: '',
+        //     Type: '',
+        //     Poster: ''
+        // }
         search = search.replace(' ','+')
 
 

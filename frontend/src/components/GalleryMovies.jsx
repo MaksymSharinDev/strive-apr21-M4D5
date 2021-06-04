@@ -4,12 +4,12 @@ Here we control Movie component generation basing upon the data we have passed b
  */
 // import './App.css'
 import { Component} from 'react'
-import { Row, Container } from 'react-bootstrap'
+import { Container } from 'react-bootstrap'
 import SingleMovie from './SigleMovie'
 
 class GalleryMovies extends Component {
     state = {  
-        galleryMovies: []
+        movieArray: []
     }
     render() { 
         return (  
@@ -17,16 +17,8 @@ class GalleryMovies extends Component {
                 <h4 className='ml-4 text-light'> Gallery Title</h4>
                 <div className='mx-1 ms-slider ms-slider--enlarge '>
                     <div className='ms-slider__inner'>
-                        {/* {this.state.galleryMovies.map(movie => <SingleMovie movieInfo={movie}/>)} */}
-                        <SingleMovie />
-                        <SingleMovie />
-                        <SingleMovie />
-                        <SingleMovie />
-                        <SingleMovie />
-                        <SingleMovie />
-                        <SingleMovie />
-                        <SingleMovie />
-                        <SingleMovie />
+                        {this.state.movieArray.map(movie => <SingleMovie movieInfo={movie}/>)}
+                        {/* <SingleMovie /> */}
                     </div>
                 </div>
             </Container>
@@ -34,15 +26,15 @@ class GalleryMovies extends Component {
     }
 
     componentDidMount = async () => {
-        const query = 'Al+Pacino'
+        const query = 'Avengers'
         const apiUrl = 'http://www.omdbapi.com/?i=tt3896198&apikey=721c816a&s='
 
         const response = await fetch( apiUrl + query)
         // console.log(response)
         const data = await response.json()
-        // console.log(data.Search)
+        console.log(data.Search)
         this.setState({
-            galleryMovies: data.Search
+            movieArray: data.Search
         })
     }
 }
