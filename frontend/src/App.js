@@ -9,7 +9,10 @@ function App() {
   return (
     <div className="App">
       <NavBar />
-      <CommentWidget />
+      <CommentWidget author="Emilian" />
+      <CommentWidget author="Maksym" />
+      <CommentWidget author="Nando" />
+      <CommentWidget author="Mike" />
     </div>
   );
 }
