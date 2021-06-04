@@ -1,6 +1,6 @@
 import { Footer } from "react-bootstrap";
 
-const Footer = () => {
+const FooterNetflix = () => {
   return (
     <footer>
       <div class="logos">
@@ -62,9 +62,9 @@ const Footer = () => {
         </ul>
       </div>
 
-      <p>&copy Emilian - Maksym - Nando</p>
+      <p>&#169; Emilian - Maksym - Nando</p>
     </footer>
   );
 };
 
-export default Footer;
+export default FooterNetflix;
